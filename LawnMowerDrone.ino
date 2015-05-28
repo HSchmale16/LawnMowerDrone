@@ -5,5 +5,7 @@
 
 #include "drivesystem.h"
 
+DriveSystem drive(1,2,3);
+
 void setup(){}
 void loop(){}

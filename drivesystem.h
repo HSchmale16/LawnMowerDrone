@@ -1,8 +1,6 @@
 #ifndef DRONE_H_INC
 #define DRONE_H_INC
 
-#include <Servo.h>
-
 class DriveSystem{
 private:
     int m_fwdpin;
