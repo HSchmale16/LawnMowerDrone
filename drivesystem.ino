@@ -1,10 +1,9 @@
+#include <Stepper.h>
 #include "drivesystem.h"
-#include <arduino.h>
 
-DriveSystem::DriveSystem(int servopin, int revpin, int fwdpin){
-    m_servopin = servopin;
-    m_fwdpin   = fwdpin;
-    m_revpin   = revpin;
+DriveSystem::DriveSystem(int fwd, int rev, int s1, int s2, int s3, int s4){
+    m_fwdpin   = fwd;
+    m_revpin   = rev;
 
     pinMode(m_fwdpin, OUTPUT);
     pinMode(m_revpin, OUTPUT);
@@ -23,4 +22,8 @@ void DriveSystem::fwd(int ms){
     digitalWrite(m_fwdpin, HIGH);
     delay(ms);
     digitalWrite(m_fwdpin, LOW);
+}
+
+void DriveSystem::rev(){
+
 }
