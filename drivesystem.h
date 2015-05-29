@@ -5,13 +5,15 @@
 
 class DriveSystem{
 private:
-    int m_fwdpin;   //!< Pin to make motor go forwards
-    int m_revpin;   //!< Pin to make motor go backwards
+    Stepper *m_step;
+    int     m_fwdpin;   //!< Pin to make motor go forwards
+    int     m_revpin;   //!< Pin to make motor go backwards
 public:
     DriveSystem();
-    DriveSystem(int rev, int fwd, int s1, int s2, int s3, int s4);
+    DriveSystem(int rev, int fwd, int steps, int s1, int s2, int s3, int s4);
+    ~DriveSystem();
 
-    void begin(int rev, int fwd, int s1, int s2, int s3, int s4);    
+    void begin(int rev, int fwd, int steps, int s1, int s2, int s3, int s4);    
     void fwd();
     void fwd(int ms);
     void rev();
